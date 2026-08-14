@@ -1,3 +1,743 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #020611;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+
+
+/* =========================================
+   MAIN PACKAGE SECTION
+========================================= */
+
+.packages-section {
+
+    min-height: calc(100vh - 70px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        90px 0 110px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,217,255,.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(111,0,255,.10),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020611,
+            #07132e,
+            #030817
+        );
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.grid-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .22;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,217,255,.07) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,.07) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   GLOWING ORBS
+========================================= */
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.glow-one {
+
+    width: 450px;
+    height: 450px;
+
+    background: #00d9ff;
+
+    opacity: .10;
+
+    top: -220px;
+    left: -180px;
+
+    animation:
+        moveGlow 8s ease-in-out infinite alternate;
+}
+
+.glow-two {
+
+    width: 450px;
+    height: 450px;
+
+    background: #7000ff;
+
+    opacity: .12;
+
+    right: -200px;
+    bottom: -200px;
+
+    animation:
+        moveGlowTwo 9s ease-in-out infinite alternate;
+}
+
+
+@keyframes moveGlow {
+
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(130px,100px);
+    }
+
+}
+
+
+@keyframes moveGlowTwo {
+
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(-100px,-100px);
+    }
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.packages-content {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.packages-heading {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.small-title {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #00d9ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.small-title span {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 10px #00d9ff;
+}
+
+.packages-heading h1 {
+
+    font-size: 55px;
+
+    font-weight: 300;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+}
+
+.packages-heading h1 strong {
+
+    color: #00d9ff;
+
+    font-weight: 800;
+
+    text-shadow:
+        0 0 20px rgba(0,217,255,.45);
+}
+
+.packages-heading p {
+
+    max-width: 620px;
+
+    margin: auto;
+
+    color:
+        rgba(255,255,255,.55);
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   PRICING WRAPPER
+========================================= */
+
+.pricing-wrapper {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   PRICING CARD
+========================================= */
+
+.pricing-card {
+
+    width: 340px;
+
+    min-height: 500px;
+
+    padding: 35px 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(19,36,70,.88),
+            rgba(5,12,29,.94)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0,0,0,.45),
+
+        inset 0 1px 0
+        rgba(255,255,255,.06);
+
+    transition:
+        transform .5s ease,
+        border .5s ease,
+        box-shadow .5s ease;
+}
+
+
+/* Top light */
+
+.pricing-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: #00d9ff;
+
+    opacity: .08;
+
+    filter: blur(50px);
+
+    transition: .5s;
+}
+
+
+/* Hover */
+
+.pricing-card:hover {
+
+    transform:
+        translateY(-15px);
+
+    border-color:
+        rgba(0,217,255,.55);
+
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,.55),
+
+        0 0 35px
+        rgba(0,217,255,.14);
+}
+
+.pricing-card:hover::before {
+
+    opacity: .18;
+
+    transform: scale(1.4);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.card-top {
+
+    text-align: center;
+}
+
+.package-icon {
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 16px;
+
+    color: #00d9ff;
+
+    font-size: 25px;
+
+    background:
+        rgba(0,217,255,.08);
+
+    border:
+        1px solid rgba(0,217,255,.25);
+
+    box-shadow:
+        0 0 20px
+        rgba(0,217,255,.08);
+
+    transition: .4s;
+}
+
+.pricing-card:hover .package-icon {
+
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+    box-shadow:
+        0 0 25px
+        rgba(0,217,255,.3);
+}
+
+.card-top h2 {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.card-top p {
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price {
+
+    text-align: center;
+
+    color: #00d9ff;
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    margin:
+        28px 0 20px;
+
+    text-shadow:
+        0 0 20px
+        rgba(0,217,255,.2);
+}
+
+.price sup {
+
+    font-size: 25px;
+
+    vertical-align: top;
+
+    position: relative;
+
+    top: 8px;
+}
+
+.price span {
+
+    color:
+        rgba(255,255,255,.4);
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    text-shadow: none;
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.line {
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,217,255,.35),
+            transparent
+        );
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0 0 28px;
+}
+
+.features li {
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size: 14px;
+
+    padding: 10px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.features li span {
+
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #00d9ff;
+
+    background:
+        rgba(0,217,255,.08);
+
+    border:
+        1px solid
+        rgba(0,217,255,.2);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.package-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    text-decoration: none;
+
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    border:
+        1px solid
+        rgba(0,217,255,.35);
+
+    background:
+        rgba(0,217,255,.06);
+
+    transition: .4s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.package-btn span {
+
+    transition: .3s;
+}
+
+.package-btn:hover {
+
+    color: #020611;
+
+    background: #00d9ff;
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,217,255,.35);
+}
+
+.package-btn:hover span {
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================
+   MOST POPULAR
+========================================= */
+
+.featured {
+
+    border:
+        1px solid
+        rgba(0,217,255,.55);
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0,0,0,.5),
+
+        0 0 40px
+        rgba(0,217,255,.15);
+}
+
+.featured:hover {
+
+    transform:
+        translateY(-20px)
+        scale(1.02);
+}
+
+.popular-label {
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding: 7px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #006eff,
+            #00d9ff
+        );
+
+    color: #020611;
+
+    border-radius:
+        0 0 12px 12px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,217,255,.25);
+}
+
+.featured .card-top {
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   PREMIUM CARD
+========================================= */
+
+.premium {
+
+    border-color:
+        rgba(111,0,255,.25);
+}
+
+.premium .package-icon {
+
+    color: #b46cff;
+
+    border-color:
+        rgba(111,0,255,.35);
+
+    background:
+        rgba(111,0,255,.08);
+}
+
+.premium:hover {
+
+    border-color:
+        rgba(160,90,255,.7);
+
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,.55),
+
+        0 0 40px
+        rgba(111,0,255,.18);
+} 
+
+
+
 /* =========================================
    RESPONSIVE PACKAGES
 ========================================= */
@@ -175,10 +915,6 @@ body {
         margin-bottom: 35px;
     }
 
-    .small-title {
-        font-size: 12px;
-    }
-
     .packages-heading h1 {
         font-size: 34px;
     }
@@ -188,65 +924,51 @@ body {
         line-height: 1.6;
     }
 
-
-    /* One card per row */
-
+    /* 3 cards - equal spacing */
     .pricing-wrapper {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
 
-        gap: 20px;
-    }
-
-
-    .pricing-card,
-    .pricing-card.premium {
-        grid-column: auto;
+        gap: 30px !important;
 
         width: 100%;
+    }
 
+    /* All cards same spacing */
+    .pricing-card,
+    .pricing-card.featured,
+    .pricing-card.premium {
+        width: 100% !important;
         max-width: 500px;
 
-        justify-self: center;
+        margin: 0 auto !important;
 
         padding: 28px 22px;
 
         border-radius: 18px;
     }
 
-
     .card-top h2 {
         font-size: 25px;
     }
-
 
     .card-top p {
         font-size: 14px;
     }
 
-
     .price {
         font-size: 42px;
     }
 
-
     .features li {
         font-size: 14px;
-
         padding: 8px 0;
     }
 
-
     .package-btn {
         width: 100%;
-
         text-align: center;
     }
-
-
-    .popular-label {
-        font-size: 10px;
-    }
-
 }
 
 
@@ -282,3 +1004,20 @@ body {
     }
 
 }
+   @media (max-width: 767px) {
+
+    .pricing-wrapper {
+        display: block !important;
+    }
+
+    .pricing-card {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto 30px !important;
+    }
+
+    .pricing-card:last-child {
+        margin-bottom: 0 !important;
+    }
+
+} 
