@@ -1,0 +1,343 @@
+/* =========================================
+   SF - GLOBAL ADVANCED NAVBAR
+========================================= */
+
+.navbar {
+    padding: 13px 0;
+
+    background: rgba(5, 10, 25, 0.88) !important;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.18);
+
+    box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.35);
+
+    transition: all 0.35s ease;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.navbar-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #ffffff !important;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #00d9ff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* Logo */
+
+.navbar-brand img {
+    width: 32px;
+
+    height: 28px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    border: 1px solid rgba(0, 217, 255, 0.4);
+
+    box-shadow:
+        0 0 12px rgba(0, 217, 255, 0.35);
+
+    transition: 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(-4deg) scale(1.08);
+
+    box-shadow:
+        0 0 22px rgba(0, 217, 255, 0.65);
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.navbar .nav-link {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.72) !important;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    margin: 0 7px;
+
+    padding: 8px 5px !important;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.navbar .nav-link:hover {
+    color: #00d9ff !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ANIMATED UNDERLINE
+========================================= */
+
+.navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    left: 50%;
+
+    bottom: 0;
+
+    background: #00d9ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.8);
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 70%;
+}
+
+
+/* Active Page */
+
+.navbar .nav-link.active {
+    color: #00d9ff !important;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 0 10px rgba(0, 217, 255, 0.35);
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.navbar .form-control {
+    min-width: 190px;
+
+    padding: 9px 17px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    color: white;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar .form-control:hover {
+    border-color:
+        rgba(0, 217, 255, 0.35);
+}
+
+
+.navbar .form-control:focus {
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 0 2px rgba(0, 217, 255, 0.08),
+        0 0 18px rgba(0, 217, 255, 0.2);
+
+    color: white;
+}
+
+
+.navbar .form-control::placeholder {
+    color:
+        rgba(255, 255, 255, 0.42);
+}
+
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
+.navbar .btn {
+    padding: 9px 19px;
+
+    border-radius: 30px;
+
+    border: 1px solid #00d9ff;
+
+    color: #00d9ff;
+
+    background: transparent;
+
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar .btn:hover {
+    background: #00d9ff !important;
+
+    border-color: #00d9ff;
+
+    color: #030711;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.4),
+        0 5px 20px rgba(0, 217, 255, 0.18);
+}
+
+
+/* =========================================
+   MOBILE TOGGLER
+========================================= */
+
+.navbar-toggler {
+    padding: 7px 9px;
+
+    border: 1px solid
+        rgba(0, 217, 255, 0.35) !important;
+
+    border-radius: 9px;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar-toggler:hover {
+    border-color: #00d9ff !important;
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.25);
+}
+
+
+.navbar-toggler:focus {
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 217, 255, 0.12) !important;
+}
+
+
+/* =========================================
+   NAVBAR RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        margin-top: 15px;
+
+        padding: 15px;
+
+        border-radius: 15px;
+
+        background:
+            rgba(4, 10, 25, 0.96);
+
+        border:
+            1px solid
+            rgba(0, 217, 255, 0.12);
+
+        box-shadow:
+            0 15px 35px
+            rgba(0, 0, 0, 0.35);
+    }
+
+
+    .navbar .nav-link {
+        margin: 4px 0;
+
+        padding: 10px 12px !important;
+
+        border-radius: 8px;
+    }
+
+
+    .navbar .nav-link:hover {
+        background:
+            rgba(0, 217, 255, 0.06);
+
+        transform: translateX(4px);
+    }
+
+
+    .navbar .nav-link::after {
+        left: 12px;
+
+        transform: none;
+
+        bottom: 4px;
+    }
+
+
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link.active::after {
+        width: 45px;
+    }
+
+
+    .navbar form {
+        margin-top: 10px;
+    }
+
+
+    .navbar .form-control {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}

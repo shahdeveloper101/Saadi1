@@ -1,0 +1,728 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #02040b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+/* ================= PAGE ================= */
+
+.contact-page {
+    min-height: calc(100vh - 70px);
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,234,255,.08),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #02040b,
+            #061127,
+            #02040b
+        );
+}
+
+
+/* ================= GRID ================= */
+
+.grid-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0,234,255,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,234,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+}
+
+
+/* ================= GLOWS ================= */
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+}
+
+.glow-blue {
+    width: 500px;
+    height: 500px;
+
+    background: #006eff;
+
+    opacity: .10;
+
+    left: -250px;
+    top: 250px;
+
+    animation: moveGlow 9s infinite alternate;
+}
+
+.glow-purple {
+    width: 500px;
+    height: 500px;
+
+    background: #7100ff;
+
+    opacity: .09;
+
+    right: -250px;
+    top: 400px;
+
+    animation: moveGlow 11s infinite alternate-reverse;
+}
+
+.glow-cyan {
+    width: 300px;
+    height: 300px;
+
+    background: #00eaff;
+
+    opacity: .05;
+
+    left: 50%;
+    top: 30%;
+}
+
+@keyframes moveGlow {
+
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(120px,-80px);
+    }
+}
+
+
+/* ================= HERO ================= */
+
+.contact-hero {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    padding: 85px 0 60px;
+}
+
+.hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 17px;
+
+    border-radius: 30px;
+
+    color: #00eaff;
+
+    background: rgba(0,234,255,.05);
+
+    border: 1px solid rgba(0,234,255,.2);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.hero-badge span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #00ff9d;
+
+    box-shadow:
+        0 0 12px #00ff9d;
+}
+
+.contact-hero h1 {
+    margin-top: 25px;
+
+    font-size: 65px;
+
+    line-height: 1.05;
+
+    font-weight: 300;
+
+    letter-spacing: -3px;
+}
+
+.contact-hero h1 strong {
+    color: #00eaff;
+
+    font-weight: 800;
+
+    text-shadow:
+        0 0 35px rgba(0,234,255,.3);
+}
+
+.contact-hero p {
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color: rgba(255,255,255,.45);
+
+    line-height: 1.7;
+}
+
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+    position: relative;
+    z-index: 5;
+
+    padding-bottom: 30px;
+}
+
+.contact-wrapper {
+
+    display: grid;
+
+    grid-template-columns:
+        .85fr 1.4fr;
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/* ================= LEFT ================= */
+
+.contact-left {
+    padding: 20px 5px;
+}
+
+.section-label {
+    color: #00eaff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.contact-left h2 {
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+}
+
+.contact-left h2 span {
+    color: #00eaff;
+
+    font-weight: 800;
+}
+
+.left-description {
+    color: rgba(255,255,255,.4);
+
+    line-height: 1.7;
+
+    font-size: 13px;
+
+    margin: 18px 0 28px;
+}
+
+
+/* ================= INFO CARDS ================= */
+
+.contact-info-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16,35,65,.65),
+            rgba(4,10,24,.75)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    backdrop-filter: blur(15px);
+
+    transition: .4s;
+}
+
+.contact-info-card:hover {
+    transform: translateX(8px);
+
+    border-color:
+        rgba(0,234,255,.35);
+
+    box-shadow:
+        0 0 30px rgba(0,234,255,.08);
+}
+
+.contact-icon {
+
+    min-width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #00eaff;
+
+    background:
+        rgba(0,234,255,.06);
+
+    border:
+        1px solid rgba(0,234,255,.2);
+
+    font-size: 18px;
+}
+
+.contact-info-card small {
+    color: rgba(255,255,255,.3);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+.contact-info-card h4 {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,.75);
+}
+
+.arrow {
+    margin-left: auto;
+
+    color: #00eaff;
+
+    opacity: .5;
+}
+
+
+/* ================= SOCIAL ================= */
+
+.social-area {
+    margin-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.social-area > span {
+    color: rgba(255,255,255,.3);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+}
+
+.social-icons {
+    display: flex;
+
+    gap: 8px;
+}
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #00eaff;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(0,234,255,.15);
+
+    background: rgba(0,234,255,.04);
+
+    transition: .3s;
+}
+
+.social-icons a:hover {
+    color: #02040b;
+
+    background: #00eaff;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,.35);
+}
+
+
+/* ================= FORM ================= */
+
+.form-container {
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17,36,70,.75),
+            rgba(3,10,24,.9)
+        );
+
+    border:
+        1px solid rgba(0,234,255,.14);
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.5),
+
+        inset 0 1px 0
+        rgba(255,255,255,.05);
+}
+
+.form-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 28px;
+}
+
+.form-header > div:first-child span {
+    color: #00eaff;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+}
+
+.form-header h2 {
+    margin-top: 8px;
+
+    font-size: 24px;
+}
+
+.online {
+    color: rgba(255,255,255,.3);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.online i {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #00ff9d;
+
+    box-shadow:
+        0 0 12px #00ff9d;
+}
+
+
+/* ================= INPUT ================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.field {
+    margin-bottom: 19px;
+}
+
+.field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: rgba(255,255,255,.3);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+.field input,
+.field textarea,
+.field select {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color: white;
+
+    background:
+        rgba(0,0,0,.2);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    transition: .3s;
+}
+
+.field select option {
+    background: #071329;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: rgba(255,255,255,.18);
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+
+    border-color: #00eaff;
+
+    box-shadow:
+        0 0 20px rgba(0,234,255,.08);
+}
+
+
+/* ================= SEND BUTTON ================= */
+
+.send-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border: none;
+
+    padding: 16px 20px;
+
+    border-radius: 13px;
+
+    color: #02040b;
+
+    background:
+        linear-gradient(
+            90deg,
+            #006eff,
+            #00eaff
+        );
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 10px 30px rgba(0,234,255,.12);
+
+    transition: .4s;
+}
+
+.send-btn b {
+    font-size: 19px;
+}
+
+.send-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(0,234,255,.3);
+}
+
+
+/* ================= BOTTOM ================= */
+
+.bottom-bar {
+
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    padding: 22px 0;
+
+    margin-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    color:
+        rgba(255,255,255,.25);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+.bottom-bar i {
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #00ff9d;
+
+    box-shadow:
+        0 0 10px #00ff9d;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 991px) {
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-hero h1 {
+        font-size: 48px;
+    }
+
+    .contact-left {
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .contact-hero {
+        padding: 55px 0 40px;
+    }
+
+    .contact-hero h1 {
+        font-size: 40px;
+    }
+
+    .contact-hero p {
+        font-size: 13px;
+    }
+
+    .form-container {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-header h2 {
+        font-size: 20px;
+    }
+
+    .bottom-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+}
