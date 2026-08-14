@@ -1,738 +1,284 @@
+/* =========================================
+   RESPONSIVE PACKAGES
+========================================= */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: #020611;
-    color: white;
-    font-family: Arial, sans-serif;
+    margin: 0;
     overflow-x: hidden;
 }
 
 
-
-
-
-/* =========================================
-   MAIN PACKAGE SECTION
-========================================= */
+/* Packages section */
 
 .packages-section {
-
-    min-height: calc(100vh - 70px);
-
-    position: relative;
-
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 20px;
     overflow: hidden;
-
-    padding:
-        90px 0 110px;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0,217,255,.08),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(111,0,255,.10),
-            transparent 25%
-        ),
-
-        linear-gradient(
-            135deg,
-            #020611,
-            #07132e,
-            #030817
-        );
 }
 
 
-/* =========================================
-   GRID
-========================================= */
-
-.grid-background {
-
-    position: absolute;
-
-    inset: 0;
-
-    opacity: .22;
-
-    background-image:
-
-        linear-gradient(
-            rgba(0,217,255,.07) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(0,217,255,.07) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        55px 55px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   GLOWING ORBS
-========================================= */
-
-.glow {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(100px);
-
-    pointer-events: none;
-}
-
-.glow-one {
-
-    width: 450px;
-    height: 450px;
-
-    background: #00d9ff;
-
-    opacity: .10;
-
-    top: -220px;
-    left: -180px;
-
-    animation:
-        moveGlow 8s ease-in-out infinite alternate;
-}
-
-.glow-two {
-
-    width: 450px;
-    height: 450px;
-
-    background: #7000ff;
-
-    opacity: .12;
-
-    right: -200px;
-    bottom: -200px;
-
-    animation:
-        moveGlowTwo 9s ease-in-out infinite alternate;
-}
-
-
-@keyframes moveGlow {
-
-    from {
-        transform: translate(0,0);
-    }
-
-    to {
-        transform: translate(130px,100px);
-    }
-
-}
-
-
-@keyframes moveGlowTwo {
-
-    from {
-        transform: translate(0,0);
-    }
-
-    to {
-        transform: translate(-100px,-100px);
-    }
-
-}
-
-
-/* =========================================
-   CONTENT
-========================================= */
+/* Main container */
 
 .packages-content {
-
-    position: relative;
-
-    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
 
-/* =========================================
-   HEADING
-========================================= */
+/* Heading */
 
 .packages-heading {
-
     text-align: center;
-
-    margin-bottom: 70px;
-}
-
-.small-title {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color: #00d9ff;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
-}
-
-.small-title span {
-
-    width: 35px;
-
-    height: 1px;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff;
+    max-width: 750px;
+    margin: 0 auto 60px;
 }
 
 .packages-heading h1 {
-
-    font-size: 55px;
-
-    font-weight: 300;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 18px;
-}
-
-.packages-heading h1 strong {
-
-    color: #00d9ff;
-
-    font-weight: 800;
-
-    text-shadow:
-        0 0 20px rgba(0,217,255,.45);
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.15;
 }
 
 .packages-heading p {
-
-    max-width: 620px;
-
-    margin: auto;
-
-    color:
-        rgba(255,255,255,.55);
-
-    line-height: 1.8;
-
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.7;
 }
 
 
-/* =========================================
-   PRICING WRAPPER
-========================================= */
+/* Pricing cards */
 
 .pricing-wrapper {
+    width: 100%;
 
-    display: flex;
+    display: grid;
 
-    justify-content: center;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
 
     align-items: stretch;
-
-    gap: 25px;
 }
 
 
-/* =========================================
-   PRICING CARD
-========================================= */
+/* Card */
 
 .pricing-card {
+    width: 100%;
+    max-width: 100%;
 
-    width: 340px;
+    min-width: 0;
 
-    min-height: 500px;
+    padding: 35px 28px;
 
-    padding: 35px 30px;
-
-    position: relative;
+    border-radius: 22px;
 
     overflow: hidden;
 
-    border-radius: 24px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(19,36,70,.88),
-            rgba(5,12,29,.94)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.09);
-
-    backdrop-filter: blur(20px);
-
-    box-shadow:
-
-        0 25px 60px
-        rgba(0,0,0,.45),
-
-        inset 0 1px 0
-        rgba(255,255,255,.06);
-
-    transition:
-        transform .5s ease,
-        border .5s ease,
-        box-shadow .5s ease;
+    transition: 0.35s ease;
 }
 
 
-/* Top light */
+/* Prevent text overflow */
 
-.pricing-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    top: -100px;
-    right: -100px;
-
-    border-radius: 50%;
-
-    background: #00d9ff;
-
-    opacity: .08;
-
-    filter: blur(50px);
-
-    transition: .5s;
+.pricing-card h2,
+.pricing-card p,
+.pricing-card li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 
-/* Hover */
-
-.pricing-card:hover {
-
-    transform:
-        translateY(-15px);
-
-    border-color:
-        rgba(0,217,255,.55);
-
-    box-shadow:
-
-        0 30px 70px
-        rgba(0,0,0,.55),
-
-        0 0 35px
-        rgba(0,217,255,.14);
-}
-
-.pricing-card:hover::before {
-
-    opacity: .18;
-
-    transform: scale(1.4);
-}
-
-
-/* =========================================
-   CARD TOP
-========================================= */
-
-.card-top {
-
-    text-align: center;
-}
-
-.package-icon {
-
-    width: 55px;
-    height: 55px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 16px;
-
-    color: #00d9ff;
-
-    font-size: 25px;
-
-    background:
-        rgba(0,217,255,.08);
-
-    border:
-        1px solid rgba(0,217,255,.25);
-
-    box-shadow:
-        0 0 20px
-        rgba(0,217,255,.08);
-
-    transition: .4s;
-}
-
-.pricing-card:hover .package-icon {
-
-    transform:
-        rotate(8deg)
-        scale(1.08);
-
-    box-shadow:
-        0 0 25px
-        rgba(0,217,255,.3);
-}
-
-.card-top h2 {
-
-    font-size: 25px;
-
-    font-weight: 700;
-
-    margin-bottom: 8px;
-}
-
-.card-top p {
-
-    color:
-        rgba(255,255,255,.45);
-
-    font-size: 13px;
-}
-
-
-/* =========================================
-   PRICE
-========================================= */
+/* Price */
 
 .price {
+    font-size: clamp(38px, 5vw, 55px);
 
-    text-align: center;
-
-    color: #00d9ff;
-
-    font-size: 58px;
-
-    font-weight: 800;
-
-    margin:
-        28px 0 20px;
-
-    text-shadow:
-        0 0 20px
-        rgba(0,217,255,.2);
-}
-
-.price sup {
-
-    font-size: 25px;
-
-    vertical-align: top;
-
-    position: relative;
-
-    top: 8px;
+    white-space: nowrap;
 }
 
 .price span {
-
-    color:
-        rgba(255,255,255,.4);
-
-    font-size: 13px;
-
-    font-weight: 400;
-
-    text-shadow: none;
+    font-size: 14px;
 }
 
 
-/* =========================================
-   LINE
-========================================= */
-
-.line {
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0,217,255,.35),
-            transparent
-        );
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   FEATURES
-========================================= */
+/* Features */
 
 .features {
-
-    list-style: none;
-
-    padding: 0;
-
-    margin: 0 0 28px;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .features li {
-
-    color:
-        rgba(255,255,255,.68);
-
-    font-size: 14px;
-
-    padding: 10px 0;
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 }
 
-.features li span {
 
-    width: 21px;
-    height: 21px;
+/* =========================================
+   TABLET
+========================================= */
 
-    display: flex;
+@media (max-width: 991px) {
 
-    align-items: center;
-    justify-content: center;
+    .packages-section {
+        padding: 60px 18px;
+    }
 
-    border-radius: 50%;
+    .packages-heading {
+        margin-bottom: 45px;
+    }
 
-    color: #00d9ff;
+    .pricing-wrapper {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-    background:
-        rgba(0,217,255,.08);
+        gap: 22px;
+    }
 
-    border:
-        1px solid
-        rgba(0,217,255,.2);
+    .pricing-card {
+        padding: 30px 22px;
+    }
 
-    font-size: 11px;
+    /* Third card full width */
+
+    .pricing-card.premium {
+        grid-column: 1 / -1;
+
+        max-width: 500px;
+
+        width: 100%;
+
+        justify-self: center;
+    }
+
 }
 
 
 /* =========================================
-   BUTTON
+   MOBILE
 ========================================= */
 
-.package-btn {
+@media (max-width: 767px) {
 
-    display: flex;
+    .packages-section {
+        padding: 50px 15px;
+    }
 
-    align-items: center;
+    .packages-heading {
+        margin-bottom: 35px;
+    }
 
-    justify-content: center;
+    .small-title {
+        font-size: 12px;
+    }
 
-    gap: 15px;
+    .packages-heading h1 {
+        font-size: 34px;
+    }
 
-    text-decoration: none;
+    .packages-heading p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
 
-    color: white;
 
-    padding: 13px 20px;
+    /* One card per row */
 
-    border-radius: 30px;
+    .pricing-wrapper {
+        grid-template-columns: 1fr;
 
-    font-weight: 600;
+        gap: 20px;
+    }
 
-    border:
-        1px solid
-        rgba(0,217,255,.35);
 
-    background:
-        rgba(0,217,255,.06);
+    .pricing-card,
+    .pricing-card.premium {
+        grid-column: auto;
 
-    transition: .4s;
+        width: 100%;
 
-    position: relative;
+        max-width: 500px;
 
-    overflow: hidden;
-}
+        justify-self: center;
 
-.package-btn span {
+        padding: 28px 22px;
 
-    transition: .3s;
-}
+        border-radius: 18px;
+    }
 
-.package-btn:hover {
 
-    color: #020611;
+    .card-top h2 {
+        font-size: 25px;
+    }
 
-    background: #00d9ff;
 
-    border-color: #00d9ff;
+    .card-top p {
+        font-size: 14px;
+    }
 
-    box-shadow:
-        0 0 25px
-        rgba(0,217,255,.35);
-}
 
-.package-btn:hover span {
+    .price {
+        font-size: 42px;
+    }
 
-    transform:
-        translateX(5px);
+
+    .features li {
+        font-size: 14px;
+
+        padding: 8px 0;
+    }
+
+
+    .package-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .popular-label {
+        font-size: 10px;
+    }
+
 }
 
 
 /* =========================================
-   MOST POPULAR
+   SMALL MOBILE
 ========================================= */
 
-.featured {
+@media (max-width: 400px) {
 
-    border:
-        1px solid
-        rgba(0,217,255,.55);
+    .packages-section {
+        padding: 40px 10px;
+    }
 
-    transform:
-        translateY(-12px);
+    .packages-heading h1 {
+        font-size: 29px;
+    }
 
-    box-shadow:
+    .packages-heading p {
+        font-size: 14px;
+    }
 
-        0 25px 60px
-        rgba(0,0,0,.5),
+    .pricing-card,
+    .pricing-card.premium {
+        padding: 25px 18px;
+    }
 
-        0 0 40px
-        rgba(0,217,255,.15);
+    .price {
+        font-size: 38px;
+    }
+
+    .features li {
+        font-size: 13px;
+    }
+
 }
-
-.featured:hover {
-
-    transform:
-        translateY(-20px)
-        scale(1.02);
-}
-
-.popular-label {
-
-    position: absolute;
-
-    top: 0;
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    padding: 7px 20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #006eff,
-            #00d9ff
-        );
-
-    color: #020611;
-
-    border-radius:
-        0 0 12px 12px;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0,217,255,.25);
-}
-
-.featured .card-top {
-
-    margin-top: 20px;
-}
-
-
-/* =========================================
-   PREMIUM CARD
-========================================= */
-
-.premium {
-
-    border-color:
-        rgba(111,0,255,.25);
-}
-
-.premium .package-icon {
-
-    color: #b46cff;
-
-    border-color:
-        rgba(111,0,255,.35);
-
-    background:
-        rgba(111,0,255,.08);
-}
-
-.premium:hover {
-
-    border-color:
-        rgba(160,90,255,.7);
-
-    box-shadow:
-
-        0 30px 70px
-        rgba(0,0,0,.55),
-
-        0 0 40px
-        rgba(111,0,255,.18);
-}
-    
