@@ -166,3 +166,43 @@
     overflow-y: auto;
     position: relative;
 }
+/* ================= MOBILE CARDS ================= */
+
+@media (max-width: 767px) {
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    .services .card {
+        width: 100% !important;
+        margin-top: 0;
+        border-radius: 14px;
+    }
+
+    .card-img-top {
+        height: 130px;
+    }
+
+    .card-body {
+        padding: 13px;
+    }
+
+    .card-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card-text {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .card .btn-primary {
+        font-size: 11px;
+        padding: 6px 13px;
+    }
+}

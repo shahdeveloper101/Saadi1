@@ -4,22 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Services | Saadi.</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="search.js">
   <style>
        body{
             background:  #050816;
        }
+       .search-highlight {
+    background: #00d9ff;
+    color: #050816;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, .7);
+}
+
+
+.search-highlight {
+    background: #451cff;
+    color: #050816;
+
+    padding: 2px 5px;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 8px rgba(0, 217, 255, 0.6);
+
+    animation: searchGlow 1s ease-in-out;
+}
+
+@keyframes searchGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(0, 217, 255, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(0, 217, 255, 0.9);
+    }
+
+    100% {
+        box-shadow:
+            0 0 8px rgba(0, 217, 255, 0.6);
+    }
+
+}
   </style>
 </head>
 
 <body>
 
-     <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+     <nav class="navbar navbar-expand-lg  navbar-dark bg-primary sticky-top ">
     <div class="container-fluid">
       <a class="navbar-brand"  href="images/S.Logo.png" target="_main">
         <img src="images/S.Logo.png" alt="" width="30" height="24"> Saadi.
@@ -48,25 +97,37 @@
             <a class="nav-link " href="contact.html" tabindex="-1">Contact-Us</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success  bg-dark" type="submit">Search</button>
-        </form>
+       <form class="d-flex" id="searchForm">
+
+    <input
+        id="searchInput"
+        class="form-control me-2"
+        type="search"
+        placeholder="Search Services..."
+        aria-label="Search">
+
+    <button
+        class="btn btn-outline-success bg-dark"
+        type="submit">
+        Search
+    </button>
+
+</form>
 
       </div>
     </div>
   </nav>
 
 <section class="services"  >
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img  src="card images/1.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">AI</h5>
         <p class="card-text">We create AI-powered applications that automate processes, improve decision-making, and deliver smarter business solutions.</p>
-        <a href="#" class="btn btn-primary">Read more</a>
+        <a href="AI.html" class="btn btn-primary" target="_main">Read more</a>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card  service-card" style="width: 18rem;">
       <img src="card images/2.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Softwere Engenering</h5>
@@ -74,7 +135,7 @@
         <a href="#" class="btn btn-primary">Read more</a>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card   service-card" style="width: 18rem;">
       <img src="card images/3.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Web Development</h5>
@@ -83,7 +144,7 @@
       </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img src="card images/4.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">UI/UX Design</h5>
@@ -93,7 +154,7 @@
     </div>
 
     
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img src="card images/5.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Graphic Design</h5>
@@ -104,7 +165,7 @@
 
 
 
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img src="card images/6.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Digital Marketing</h5>
@@ -114,7 +175,7 @@
     </div>
     
 
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img src="card images/7.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Cyber Security</h5>
@@ -124,7 +185,7 @@
     </div>
     
 
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img src="card images/8.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">IT Consulting</h5>
@@ -134,7 +195,7 @@
     </div>
     
 
-    <div class="card" style="width: 18rem;">
+    <div class="card service-card" style="width: 18rem;">
       <img src="card images/9.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Cloud Solutions</h5>
@@ -143,7 +204,16 @@
       </div>
     </div>
   </section>
-  <footer class="advanced-footer">
+<br>
+<br>
+
+
+
+
+
+
+
+   <footer class="advanced-footer">
 
     <div class="footer-glow"></div>
 
@@ -165,10 +235,18 @@
                 </p>
 
                 <div class="social-links">
-                    <a href="https://www.facebook.com/shah.saeedullah" target="_main">f</a>
-                    <a href="#">in</a>
-                    <a href="#">◎</a>
-                    <a href="#">▶</a>
+            
+                    <a href="https://www.facebook.com/shah.saeedullah" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                      </a>
+                    <a href="#" class="instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://pk.linkedin.com/in/shah-saeedullah-88266942a?trk=people-guest_people_search-card">in</a>
+                    <a href="https://wa.me/923471913990" target="_blank" class="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    </a>
+                    
                 </div>
 
             </div>
@@ -193,7 +271,7 @@
 
                 <h4>Services</h4>
 
-                <a href="services.html">AI Solutions</a>
+                <a href="AI.html">AI Solutions</a>
                 <a href="services.html">Web Development</a>
                 <a href="services.html">Software Engineering</a>
                 <a href="services.html">UI/UX Design</a>
@@ -208,8 +286,8 @@
                 <h4>Get In Touch</h4>
 
                 <p>📍 Pakistan</p>
-                <p>✉ info@saadi.com</p>
-                <p>☎ +92 300 1234567</p>
+                <p> <i class="fas fa-envelope"></i> shahdeveloper101@gmail.com</p>
+                <p>☎ +92 3471913990</p>
 
                 <a href="contact.html" class="footer-contact-btn">
                     Contact Us
@@ -225,7 +303,7 @@
         <div class="footer-bottom">
 
             <p>
-                © 2026 <strong>Saadi.</strong> All Rights Reserved.
+                © 2026 <strong>Saadi.</strong> | All Rights Reserved.
             </p>
 
             <div>
@@ -241,8 +319,59 @@
 
 
 
+<script>
 
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".services .card");
 
+searchInput.addEventListener("input", function () {
+
+    const searchValue = this.value.trim();
+
+    cards.forEach(card => {
+
+        // Original text save karna
+        const title = card.querySelector(".card-title");
+        const text = card.querySelector(".card-text");
+
+        // Original content restore
+        if (!title.dataset.original) {
+            title.dataset.original = title.innerHTML;
+        }
+
+        if (!text.dataset.original) {
+            text.dataset.original = text.innerHTML;
+        }
+
+        title.innerHTML = title.dataset.original;
+        text.innerHTML = text.dataset.original;
+
+        // Agar search empty hai
+        if (searchValue === "") {
+            return;
+        }
+
+        // Search word highlight
+        const regex = new RegExp(
+            "(" + searchValue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
+            "gi"
+        );
+
+        title.innerHTML = title.innerHTML.replace(
+            regex,
+            '<mark class="search-highlight">$1</mark>'
+        );
+
+        text.innerHTML = text.innerHTML.replace(
+            regex,
+            '<mark class="search-highlight">$1</mark>'
+        );
+
+    });
+
+});
+
+</script>
 
 
 
@@ -250,6 +379,11 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous">
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="search.js"></script>
+
 </body>
 
 </html>
