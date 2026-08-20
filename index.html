@@ -455,12 +455,18 @@ alert("Shukria")
 
 <script src="search.js"></script>
 <script>
-  var username= prompt("Well Come : Enter Your Name")
-  alert(`${username} Apka Shukria 🥰
-  Thank's you So Much 😘`)
-console.log(username)
+  var username;
 
+  do {
+    username = prompt("Welcome: Enter Your Name");
+  } while (username === null || username.trim() === "");
+
+  alert(`${username} Apka Shukria 🥰
+Thank's You So Much 😘`);
+
+  console.log(username);
 </script>
+
 </body>
 
 </html>
